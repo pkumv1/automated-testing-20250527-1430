@@ -1,0 +1,36 @@
+{
+  "name": "egov-rts-e2e-tests",
+  "version": "1.0.0",
+  "description": "Automated E2E testing with self-healing for EGOV-RTS-NMC",
+  "main": "test-scripts/execute-tests.js",
+  "scripts": {
+    "test": "node test-scripts/execute-tests.js",
+    "test:ui": "playwright test test-scripts/ui/",
+    "test:api": "playwright test test-scripts/api/",
+    "test:load": "node test-scripts/load/api-load-test-advanced.js",
+    "test:cross-browser": "node test-scripts/multi-browser/cross-browser-tests.js",
+    "test:resilience": "node test-scripts/chaos/api-resilience-test.js",
+    "test:advanced": "node test-scripts/execute-advanced-tests.js",
+    "report": "node test-scripts/generate-simple-report.js",
+    "install:browsers": "npx playwright install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkumv1/automated-testing-20250527-1430.git"
+  },
+  "keywords": [
+    "e2e-testing",
+    "self-healing",
+    "playwright",
+    "automated-testing",
+    "egov"
+  ],
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

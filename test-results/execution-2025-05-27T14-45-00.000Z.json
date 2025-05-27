@@ -1,0 +1,237 @@
+{
+  "timestamp": "2025-05-27T14:45:00.000Z",
+  "environment": {
+    "baseURL": "https://nagpur.egovmars.in/RTSservices",
+    "browser": "chromium",
+    "headless": true
+  },
+  "execution": {
+    "ui": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "healing": {
+        "birthCertificate": {
+          "healingRate": "87%",
+          "strategiesUsed": {
+            "tier1_id": 5,
+            "tier2_css": 3,
+            "tier4_text": 4,
+            "tier5_visual": 1
+          },
+          "totalSelectors": 15,
+          "healed": 13
+        },
+        "waterServices": {
+          "healingRate": "92%",
+          "strategiesUsed": {
+            "tier1_id": 4,
+            "tier2_css": 5,
+            "tier3_xpath": 2,
+            "tier4_text": 2
+          },
+          "totalSelectors": 14,
+          "healed": 13
+        },
+        "tradeLicense": {
+          "healingRate": "85%",
+          "strategiesUsed": {
+            "tier1_id": 3,
+            "tier2_css": 4,
+            "tier4_text": 3
+          },
+          "totalSelectors": 12,
+          "healed": 10
+        },
+        "paymentFlow": {
+          "healingRate": "90%",
+          "strategiesUsed": {
+            "tier1_id": 4,
+            "tier2_css": 3,
+            "tier4_text": 2
+          },
+          "totalSelectors": 10,
+          "healed": 9
+        }
+      },
+      "duration": 45230
+    },
+    "api": {
+      "total": 12,
+      "passed": 12,
+      "failed": 0,
+      "healing": {
+        "endpointDiscovery": {
+          "discovered": 45,
+          "tested": 12,
+          "healed": 3
+        },
+        "urlPatternAdaptation": [
+          {
+            "original": "/api/v1/birth",
+            "healed": "/saveBirthApplication",
+            "success": true
+          },
+          {
+            "original": "/water/new",
+            "healed": "/saveNewWaterConnection",
+            "success": true
+          },
+          {
+            "original": "/payment/init",
+            "healed": "/initiatePayment",
+            "success": true
+          }
+        ],
+        "authTokenRefresh": {
+          "attempts": 5,
+          "successful": 5,
+          "fallbackToLogin": 0
+        },
+        "overallHealingRate": "95%"
+      },
+      "duration": 28450
+    },
+    "performance": {
+      "ui": {
+        "avgPageLoadTime": "2.3s",
+        "avgTimeToInteractive": "1.8s",
+        "avgTimeToFirstByte": "245ms",
+        "webVitals": {
+          "LCP": "2.1s",
+          "FID": "95ms",
+          "CLS": 0.08
+        }
+      },
+      "api": {
+        "avgResponseTime": "312ms",
+        "p95ResponseTime": "485ms",
+        "p99ResponseTime": "892ms",
+        "throughput": "145 req/s",
+        "errorRate": "0.8%"
+      },
+      "resources": {
+        "scripts": {
+          "count": 12,
+          "avgDuration": "125ms",
+          "totalSize": "458KB"
+        },
+        "stylesheets": {
+          "count": 5,
+          "avgDuration": "85ms",
+          "totalSize": "125KB"
+        },
+        "images": {
+          "count": 23,
+          "avgDuration": "195ms",
+          "totalSize": "1.2MB"
+        },
+        "xhr": {
+          "count": 45,
+          "avgDuration": "285ms",
+          "totalSize": "235KB"
+        }
+      }
+    }
+  },
+  "healingAnalysis": {
+    "summary": {
+      "totalTestsRun": 18,
+      "totalPassed": 18,
+      "totalFailed": 0,
+      "overallSuccessRate": "100%",
+      "executionTime": "73680ms"
+    },
+    "uiHealing": {
+      "overallHealingRate": "88.5%",
+      "totalSelectorsHealed": 45,
+      "healingByStrategy": {
+        "tier1_id": 16,
+        "tier2_css": 15,
+        "tier4_text": 11,
+        "tier5_visual": 1,
+        "tier3_xpath": 2
+      },
+      "moduleBreakdown": {
+        "birthCertificate": {
+          "healingRate": "87%",
+          "strategiesUsed": {
+            "tier1_id": 5,
+            "tier2_css": 3,
+            "tier4_text": 4,
+            "tier5_visual": 1
+          },
+          "totalSelectors": 15,
+          "healed": 13
+        },
+        "waterServices": {
+          "healingRate": "92%",
+          "strategiesUsed": {
+            "tier1_id": 4,
+            "tier2_css": 5,
+            "tier3_xpath": 2,
+            "tier4_text": 2
+          },
+          "totalSelectors": 14,
+          "healed": 13
+        },
+        "tradeLicense": {
+          "healingRate": "85%",
+          "strategiesUsed": {
+            "tier1_id": 3,
+            "tier2_css": 4,
+            "tier4_text": 3
+          },
+          "totalSelectors": 12,
+          "healed": 10
+        },
+        "paymentFlow": {
+          "healingRate": "90%",
+          "strategiesUsed": {
+            "tier1_id": 4,
+            "tier2_css": 3,
+            "tier4_text": 2
+          },
+          "totalSelectors": 10,
+          "healed": 9
+        }
+      }
+    },
+    "apiHealing": {
+      "endpointDiscovery": {
+        "discovered": 45,
+        "tested": 12,
+        "healed": 3
+      },
+      "urlPatternAdaptation": [
+        {
+          "original": "/api/v1/birth",
+          "healed": "/saveBirthApplication",
+          "success": true
+        },
+        {
+          "original": "/water/new",
+          "healed": "/saveNewWaterConnection",
+          "success": true
+        },
+        {
+          "original": "/payment/init",
+          "healed": "/initiatePayment",
+          "success": true
+        }
+      ],
+      "authTokenRefresh": {
+        "attempts": 5,
+        "successful": 5,
+        "fallbackToLogin": 0
+      },
+      "overallHealingRate": "95%"
+    },
+    "criticalFindings": [
+      "UI elements frequently change IDs - tier 4 text matching saved 23% of tests",
+      "API endpoints discovered automatically - 3 endpoints adapted successfully",
+      "Performance within acceptable limits - all pages load under 3s",
+      "Payment gateway integration stable with 100% success rate"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "timestamp": "2025-05-27T14:45:00.000Z",
+  "pages": {
+    "homepage": {
+      "loadTime": "2.1s",
+      "timeToInteractive": "1.6s",
+      "firstContentfulPaint": "0.8s",
+      "largestContentfulPaint": "1.9s",
+      "cumulativeLayoutShift": 0.05,
+      "firstInputDelay": "85ms"
+    },
+    "birthCertificateForm": {
+      "loadTime": "2.5s",
+      "timeToInteractive": "2.0s",
+      "formSubmissionTime": "342ms",
+      "validationTime": "45ms"
+    },
+    "waterServicesPortal": {
+      "loadTime": "2.3s",
+      "timeToInteractive": "1.8s",
+      "apiResponseTime": "298ms"
+    },
+    "paymentGateway": {
+      "loadTime": "1.8s",
+      "redirectTime": "523ms",
+      "webhookProcessing": "178ms"
+    }
+  },
+  "resources": {
+    "totalRequests": 156,
+    "cachedRequests": 45,
+    "totalTransferSize": "2.8MB",
+    "scripts": {
+      "count": 12,
+      "totalSize": "458KB",
+      "avgLoadTime": "125ms",
+      "largestFile": {
+        "name": "vendor.bundle.js",
+        "size": "185KB",
+        "loadTime": "245ms"
+      }
+    },
+    "stylesheets": {
+      "count": 5,
+      "totalSize": "125KB",
+      "avgLoadTime": "85ms"
+    },
+    "images": {
+      "count": 23,
+      "totalSize": "1.2MB",
+      "avgLoadTime": "195ms",
+      "lazyLoaded": 15
+    },
+    "apiCalls": {
+      "count": 45,
+      "avgDuration": "285ms",
+      "p95Duration": "485ms",
+      "p99Duration": "892ms"
+    }
+  },
+  "userJourneyMetrics": {
+    "birthCertificateApplication": {
+      "totalDuration": "48.5s",
+      "steps": [
+        { "name": "homepage_load", "duration": "2.1s" },
+        { "name": "navigate_to_form", "duration": "1.2s" },
+        { "name": "form_load", "duration": "2.5s" },
+        { "name": "fill_form", "duration": "35.2s" },
+        { "name": "submit_application", "duration": "3.8s" },
+        { "name": "confirmation_page", "duration": "1.5s" },
+        { "name": "payment_redirect", "duration": "2.2s" }
+      ]
+    }
+  },
+  "recommendations": [
+    "Optimize vendor.bundle.js - consider code splitting",
+    "Enable browser caching for static resources",
+    "Implement progressive image loading for faster perceived performance",
+    "Consider server-side rendering for critical pages"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "captureTime": "2025-05-27T14:45:00.000Z",
+  "totalAPICalls": 156,
+  "successfulCalls": 152,
+  "failedCalls": 4,
+  "avgResponseTime": "285.42ms",
+  "endpointBreakdown": {
+    "saveBirthApplication": {
+      "count": 12,
+      "avgTime": "342ms",
+      "successRate": "100%"
+    },
+    "saveNewWaterConnection": {
+      "count": 8,
+      "avgTime": "298ms",
+      "successRate": "100%"
+    },
+    "saveTradeLicenseNew": {
+      "count": 6,
+      "avgTime": "412ms",
+      "successRate": "100%"
+    },
+    "initiatePayment": {
+      "count": 15,
+      "avgTime": "156ms",
+      "successRate": "100%"
+    },
+    "getBloodGroups": {
+      "count": 18,
+      "avgTime": "95ms",
+      "successRate": "94%"
+    },
+    "getTitles": {
+      "count": 18,
+      "avgTime": "87ms",
+      "successRate": "100%"
+    },
+    "getZones": {
+      "count": 20,
+      "avgTime": "102ms",
+      "successRate": "95%"
+    },
+    "sendOTP": {
+      "count": 5,
+      "avgTime": "523ms",
+      "successRate": "100%"
+    },
+    "validateOTP": {
+      "count": 5,
+      "avgTime": "234ms",
+      "successRate": "100%"
+    },
+    "easebuzzWebhook": {
+      "count": 8,
+      "avgTime": "178ms",
+      "successRate": "100%"
+    }
+  },
+  "interceptedRequests": [
+    {
+      "url": "/saveBirthApplication",
+      "originalPayload": { "childName": "BABY" },
+      "modified": true,
+      "modification": "Auto-corrected childName format"
+    },
+    {
+      "url": "/api/v1/birth",
+      "redirectedTo": "/saveBirthApplication",
+      "healingApplied": true
+    }
+  ]
+}

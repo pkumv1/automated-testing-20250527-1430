@@ -1,0 +1,155 @@
+{
+  "analysis_timestamp": "2025-05-27T14:30:00Z",
+  "application_type": "E-Government RTI Services",
+  "framework": "Spring MVC 3.0",
+  "complexity_metrics": {
+    "total_controllers": 82,
+    "total_services": 35,
+    "total_endpoints": 200,
+    "lines_of_code": "~100000",
+    "complexity_score": 9.2
+  },
+  "security_metrics": {
+    "authentication": "Spring Security with CAS",
+    "authorization": "Role-based (RBAC)",
+    "vulnerabilities": [
+      "Base64 file uploads without validation",
+      "Direct SQL queries in some controllers",
+      "Missing CSRF protection on some endpoints"
+    ],
+    "risk_level": "MEDIUM"
+  },
+  "api_endpoints": {
+    "birth_certificate": [
+      "POST /saveBirthApplication",
+      "POST /getRTSRegistrationform/{servicesid}"
+    ],
+    "death_certificate": [
+      "POST /saveDeathApplication",
+      "GET /getDeathCertificateStatus/{appId}"
+    ],
+    "marriage_certificate": [
+      "POST /saveMarriageApplication",
+      "GET /getMarriageLaws",
+      "GET /getMarriageStatus"
+    ],
+    "water_services": [
+      "POST /saveNewWaterConnection",
+      "POST /saveWaterDisconnection",
+      "POST /saveWaterReconnection",
+      "POST /saveWaterQualityComplaint"
+    ],
+    "trade_license": [
+      "POST /saveTradeLicenseNew",
+      "POST /saveTradeLicenseRenewal",
+      "POST /saveTradeLicenseCancellation",
+      "POST /saveTradeLicenseNameChange"
+    ],
+    "property_tax": [
+      "POST /savePropertyTaxNewAssessment",
+      "POST /savePropertyTaxReAssessment",
+      "POST /savePropertyTaxExemption",
+      "POST /savePropertyTaxTransfer"
+    ],
+    "fire_noc": [
+      "POST /saveFireRecommendationLetter",
+      "POST /saveFireComplianceCertificate"
+    ],
+    "master_data": [
+      "GET /getBloodGroups",
+      "GET /getGenders",
+      "GET /getCountries",
+      "GET /getTitles",
+      "GET /getZones"
+    ],
+    "payment": [
+      "POST /initiatePayment",
+      "POST /easebuzzWebhook"
+    ],
+    "authentication": [
+      "POST /sendOTP",
+      "POST /validateOTP"
+    ]
+  },
+  "critical_ui_paths": [
+    "/kiosk/rtiapplication/newRTIBirthApplication.do",
+    "/kiosk/user/login.do",
+    "/kiosk/user/registration.do",
+    "/citizen/dashboard",
+    "/admin/workflow/pending",
+    "/payment/gateway"
+  ],
+  "api_dependencies": {
+    "internal": [
+      "RTIApplicationService",
+      "BirthCertificateService",
+      "WorkflowService",
+      "EmailService",
+      "SMSService"
+    ],
+    "external": [
+      "EaseBuzz Payment Gateway",
+      "SMS Gateway (templateId: 1507167462244373944)",
+      "WhatsApp API",
+      "Digital Signature Service"
+    ]
+  },
+  "test_priority_matrix": [
+    {
+      "priority": "CRITICAL",
+      "category": "Authentication & Security",
+      "endpoints": ["/sendOTP", "/validateOTP", "/login"],
+      "reason": "Core security functionality"
+    },
+    {
+      "priority": "CRITICAL",
+      "category": "Birth Certificate",
+      "endpoints": ["/saveBirthApplication"],
+      "reason": "Most used citizen service"
+    },
+    {
+      "priority": "HIGH",
+      "category": "Payment Integration",
+      "endpoints": ["/initiatePayment", "/easebuzzWebhook"],
+      "reason": "Financial transactions"
+    },
+    {
+      "priority": "HIGH",
+      "category": "Water Services",
+      "endpoints": ["/saveNewWaterConnection", "/saveWaterDisconnection"],
+      "reason": "Essential utility services"
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "Trade License",
+      "endpoints": ["/saveTradeLicenseNew", "/saveTradeLicenseRenewal"],
+      "reason": "Business critical"
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "Property Tax",
+      "endpoints": ["/savePropertyTaxNewAssessment"],
+      "reason": "Revenue generation"
+    },
+    {
+      "priority": "LOW",
+      "category": "Master Data",
+      "endpoints": ["/getBloodGroups", "/getGenders"],
+      "reason": "Static reference data"
+    }
+  ],
+  "performance_baselines": {
+    "api_response_times": {
+      "95th_percentile": "500ms",
+      "99th_percentile": "1000ms"
+    },
+    "page_load_times": {
+      "target": "3s",
+      "critical": "5s"
+    },
+    "concurrent_users": {
+      "expected": 100,
+      "peak": 500
+    }
+  }
+}

@@ -1,0 +1,7 @@
+node_modules/
+.env
+test-results/*.json
+test-results/*.html
+test-results/videos/
+test-results/traces/
+.DS_Store

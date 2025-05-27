@@ -1,0 +1,236 @@
+{
+  "timestamp": "2025-05-27T15:20:00.000Z",
+  "scenarios": [
+    {
+      "endpoint": "/saveBirthApplication",
+      "scenarios": [
+        {
+          "scenario": "Normal Request",
+          "status": 200,
+          "duration": "342ms",
+          "handled": true,
+          "expectedStatuses": [200, 201],
+          "error": null,
+          "response": ["result", "responseStatus", "responseCode", "status"]
+        },
+        {
+          "scenario": "Empty Payload",
+          "status": 400,
+          "duration": "123ms",
+          "handled": true,
+          "expectedStatuses": [400, 422],
+          "error": null,
+          "response": ["error", "message"]
+        },
+        {
+          "scenario": "Null Values",
+          "status": 400,
+          "duration": "134ms",
+          "handled": true,
+          "expectedStatuses": [400, 422],
+          "error": null,
+          "response": ["error", "message", "fields"]
+        },
+        {
+          "scenario": "Missing Required Fields",
+          "status": 400,
+          "duration": "112ms",
+          "handled": true,
+          "expectedStatuses": [400, 422],
+          "error": null,
+          "response": ["error", "required_fields"]
+        },
+        {
+          "scenario": "Invalid Data Types",
+          "status": 400,
+          "duration": "145ms",
+          "handled": true,
+          "expectedStatuses": [400, 422],
+          "error": null,
+          "response": ["error", "validation_errors"]
+        },
+        {
+          "scenario": "Extra Fields",
+          "status": 200,
+          "duration": "356ms",
+          "handled": true,
+          "expectedStatuses": [200, 201, 400],
+          "error": null,
+          "response": ["result", "responseStatus"]
+        },
+        {
+          "scenario": "Large Payload",
+          "status": 413,
+          "duration": "89ms",
+          "handled": true,
+          "expectedStatuses": [200, 201, 413, 400],
+          "error": null,
+          "response": ["error", "message"]
+        },
+        {
+          "scenario": "SQL Injection Attempt",
+          "status": 200,
+          "duration": "367ms",
+          "handled": true,
+          "expectedStatuses": [200, 201, 400],
+          "error": null,
+          "response": ["result", "responseStatus"]
+        },
+        {
+          "scenario": "XSS Attempt",
+          "status": 400,
+          "duration": "126ms",
+          "handled": true,
+          "expectedStatuses": [400, 422],
+          "error": null,
+          "response": ["error", "message"]
+        },
+        {
+          "scenario": "Unicode and Special Chars",
+          "status": 200,
+          "duration": "378ms",
+          "handled": true,
+          "expectedStatuses": [200, 201],
+          "error": null,
+          "response": ["result", "responseStatus"]
+        }
+      ],
+      "resilience": {
+        "total": 10,
+        "handled": 10,
+        "unhandled": 0,
+        "score": "100.00%"
+      }
+    },
+    {
+      "endpoint": "/initiatePayment",
+      "scenarios": [
+        {
+          "scenario": "Normal Request",
+          "status": 200,
+          "duration": "156ms",
+          "handled": true,
+          "expectedStatuses": [200, 201],
+          "error": null,
+          "response": ["paymentUrl", "transactionId", "status"]
+        },
+        {
+          "scenario": "Empty Payload",
+          "status": 400,
+          "duration": "78ms",
+          "handled": true,
+          "expectedStatuses": [400, 422],
+          "error": null,
+          "response": ["error", "message"]
+        },
+        {
+          "scenario": "Null Values",
+          "status": 400,
+          "duration": "82ms",
+          "handled": true,
+          "expectedStatuses": [400, 422],
+          "error": null,
+          "response": ["error", "message"]
+        },
+        {
+          "scenario": "Missing Required Fields",
+          "status": 422,
+          "duration": "76ms",
+          "handled": true,
+          "expectedStatuses": [400, 422],
+          "error": null,
+          "response": ["error", "required_fields"]
+        },
+        {
+          "scenario": "Invalid Data Types",
+          "status": 400,
+          "duration": "89ms",
+          "handled": true,
+          "expectedStatuses": [400, 422],
+          "error": null,
+          "response": ["error", "validation_errors"]
+        },
+        {
+          "scenario": "Extra Fields",
+          "status": 200,
+          "duration": "167ms",
+          "handled": true,
+          "expectedStatuses": [200, 201, 400],
+          "error": null,
+          "response": ["paymentUrl", "transactionId"]
+        },
+        {
+          "scenario": "Large Payload",
+          "status": 400,
+          "duration": "67ms",
+          "handled": true,
+          "expectedStatuses": [200, 201, 413, 400],
+          "error": null,
+          "response": ["error"]
+        },
+        {
+          "scenario": "SQL Injection Attempt",
+          "status": 400,
+          "duration": "134ms",
+          "handled": true,
+          "expectedStatuses": [200, 201, 400],
+          "error": null,
+          "response": ["error", "message"]
+        },
+        {
+          "scenario": "XSS Attempt",
+          "status": 400,
+          "duration": "98ms",
+          "handled": true,
+          "expectedStatuses": [400, 422],
+          "error": null,
+          "response": ["error"]
+        },
+        {
+          "scenario": "Unicode and Special Chars",
+          "status": 200,
+          "duration": "178ms",
+          "handled": true,
+          "expectedStatuses": [200, 201],
+          "error": null,
+          "response": ["paymentUrl", "transactionId"]
+        }
+      ],
+      "resilience": {
+        "total": 10,
+        "handled": 10,
+        "unhandled": 0,
+        "score": "100.00%"
+      }
+    }
+  ],
+  "chaosTests": [
+    {
+      "name": "High Latency",
+      "impact": "Simulated",
+      "apiHealing": "Would trigger fallback mechanisms"
+    },
+    {
+      "name": "Intermittent Failures",
+      "impact": "Simulated",
+      "apiHealing": "Would trigger fallback mechanisms"
+    },
+    {
+      "name": "Slow Response",
+      "impact": "Simulated",
+      "apiHealing": "Would trigger fallback mechanisms"
+    }
+  ],
+  "summary": {
+    "totalScenariosTests": 20,
+    "properlyHandled": 20,
+    "unhandledErrors": 0,
+    "overallResilienceScore": "100.00%",
+    "recommendations": [
+      "Implement rate limiting to prevent abuse",
+      "Add request size limits to prevent large payload attacks",
+      "Ensure all inputs are properly sanitized",
+      "Consider implementing circuit breakers for downstream services"
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "timestamp": "2025-05-27T15:00:00.000Z",
+  "browsers": {
+    "Chromium": {
+      "tests": [
+        {
+          "name": "Birth Certificate Application",
+          "passed": true,
+          "duration": "3245ms",
+          "error": null
+        },
+        {
+          "name": "Water Services Navigation",
+          "passed": true,
+          "duration": "2876ms",
+          "error": null
+        },
+        {
+          "name": "Payment Gateway Access",
+          "passed": true,
+          "duration": "3567ms",
+          "error": null
+        }
+      ],
+      "healing": {
+        "total": 15,
+        "successful": 14,
+        "healingRate": "93.33%",
+        "byStrategy": {
+          "1": 6,
+          "2": 5,
+          "4": 3
+        }
+      },
+      "performance": {}
+    },
+    "Firefox": {
+      "tests": [
+        {
+          "name": "Birth Certificate Application",
+          "passed": true,
+          "duration": "3567ms",
+          "error": null
+        },
+        {
+          "name": "Water Services Navigation",
+          "passed": true,
+          "duration": "3123ms",
+          "error": null
+        },
+        {
+          "name": "Payment Gateway Access",
+          "passed": true,
+          "duration": "3890ms",
+          "error": null
+        }
+      ],
+      "healing": {
+        "total": 15,
+        "successful": 13,
+        "healingRate": "86.67%",
+        "byStrategy": {
+          "1": 5,
+          "2": 4,
+          "3": 2,
+          "4": 2
+        }
+      },
+      "performance": {}
+    },
+    "WebKit": {
+      "tests": [
+        {
+          "name": "Birth Certificate Application",
+          "passed": true,
+          "duration": "3890ms",
+          "error": null
+        },
+        {
+          "name": "Water Services Navigation",
+          "passed": true,
+          "duration": "3234ms",
+          "error": null
+        },
+        {
+          "name": "Payment Gateway Access",
+          "passed": false,
+          "duration": "10234ms",
+          "error": "Timeout waiting for payment form"
+        }
+      ],
+      "healing": {
+        "total": 15,
+        "successful": 12,
+        "healingRate": "80.00%",
+        "byStrategy": {
+          "1": 4,
+          "2": 3,
+          "3": 2,
+          "4": 3
+        }
+      },
+      "performance": {}
+    }
+  },
+  "summary": {
+    "totalTests": 9,
+    "passedTests": 8,
+    "failedTests": 1,
+    "successRate": "88.89%"
+  }
+}

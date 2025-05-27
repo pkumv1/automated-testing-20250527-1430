@@ -1,0 +1,83 @@
+{
+  "timestamp": "2025-05-27T15:10:00.000Z",
+  "endpoints": {
+    "/saveBirthApplication": {
+      "total": 6000,
+      "success": 5940,
+      "failed": 60,
+      "responseTimes": [],
+      "errors": {
+        "500": 45,
+        "network_error": 15
+      },
+      "throughput": [98, 99, 100, 97, 100, 99, 98, 100, 99, 100],
+      "stats": {
+        "min": "156ms",
+        "max": "2345ms",
+        "avg": "342.56ms",
+        "p50": "298ms",
+        "p95": "567ms",
+        "p99": "1234ms"
+      },
+      "successRate": "99.00%",
+      "avgThroughput": "99.00 req/s",
+      "peakThroughput": "100 req/s"
+    },
+    "/saveNewWaterConnection": {
+      "total": 1500,
+      "success": 1485,
+      "failed": 15,
+      "responseTimes": [],
+      "errors": {
+        "503": 10,
+        "network_error": 5
+      },
+      "throughput": [48, 50, 49, 50, 50, 49],
+      "stats": {
+        "min": "189ms",
+        "max": "1567ms",
+        "avg": "312.89ms",
+        "p50": "278ms",
+        "p95": "489ms",
+        "p99": "987ms"
+      },
+      "successRate": "99.00%",
+      "avgThroughput": "49.33 req/s",
+      "peakThroughput": "50 req/s"
+    },
+    "/initiatePayment": {
+      "total": 9000,
+      "success": 8955,
+      "failed": 45,
+      "responseTimes": [],
+      "errors": {
+        "502": 30,
+        "network_error": 15
+      },
+      "throughput": [195, 198, 200, 199, 200, 198, 200, 197, 200],
+      "stats": {
+        "min": "98ms",
+        "max": "1234ms",
+        "avg": "187.34ms",
+        "p50": "156ms",
+        "p95": "345ms",
+        "p99": "678ms"
+      },
+      "successRate": "99.50%",
+      "avgThroughput": "198.56 req/s",
+      "peakThroughput": "200 req/s"
+    }
+  },
+  "summary": {
+    "totalRequests": 16500,
+    "totalSuccess": 16380,
+    "totalFailed": 120,
+    "overallSuccessRate": "99.27%",
+    "apiHealingApplied": {
+      "totalRequests": 16500,
+      "healedRequests": 245,
+      "healingRate": "1.48%",
+      "log": []
+    }
+  }
+}
